@@ -1,15 +1,17 @@
 <?php
+namespace Yatzy;
+
 class Dice {
+    public $min;
+    public $max;
 
-    public $value;
-
-    function __construct()
+    function __construct($min, $max)
     {
-        $this->value = 0;
+        $this->min = $min;
+        $this->max = $max;
     }
 
     function roll() {
-        $this->value = rand(1, 5);
-        return $this->value;
+        return rand($this->min, $this->max);
     }
 }
